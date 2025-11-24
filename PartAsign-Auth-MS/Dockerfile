@@ -9,5 +9,6 @@ RUN mvn -B -DskipTests clean package
 FROM eclipse-temurin:17-jre
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
-EXPOSE 9103
+# Railway inyecta PORT; expone 8080 por convención y el entrypoint la leerá
+EXPOSE 8080
 ENTRYPOINT ["java","-jar","/app/app.jar"]
