@@ -3,11 +3,13 @@ package com.partasign.cl.partasign_auth_ms;
 import com.partasign.cl.partasign_auth_ms.Model.Usuario;
 import com.partasign.cl.partasign_auth_ms.Repository.UsuarioRepository;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Component
+@Profile("dev")
 public class DataSeeder implements CommandLineRunner {
 
     private final UsuarioRepository repository;
